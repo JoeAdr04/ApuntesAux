@@ -17,7 +17,13 @@ public class ServidorMinecraft {
         // TODO code application logic here
         Servidor s= new Servidor("joel", 2000);
         s.agregarJugador("Angel", 4);
+        s.agregarJugador("jhon", 2000);
         s.mostrar();
+        //inciso b)
+        s.contarStacks();
+        s.nummayor();
+        System.out.println("total de diamanates: "+ s.totaldiamantes());
+
     }
     
 }
