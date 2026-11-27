@@ -30,6 +30,7 @@ class ArchEstudiante:
         with open(self.__ruta, "r") as arch:
             try:
                 datos = json.load(arch)
+                print(f"datos recuperados de: {self.__ruta}")
             except Exception as e:
                 print("ha fallado todo lo que podia fallar al leer", e)
                 datos = []
@@ -39,6 +40,7 @@ class ArchEstudiante:
         try:    
             with open(self.__ruta, "w") as arch:
                 json.dump(di, arch,ensure_ascii=False, indent=2)
+                print(f"Datos modificados en {self.__ruta}")
         except Exception as j:
             print("ha fallado todo lo que podia fallar al modificar", j)
 
@@ -49,3 +51,6 @@ class Main:
     arr.append(e1.toDict())
 
     a.modificar(arr)
+
+    print("Datos del archivo: ")
+    print(a.leer())
